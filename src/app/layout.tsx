@@ -21,9 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SupabaseProvider>
-          <Suspense fallback={<Loading />}></Suspense>
           <Navbar />
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </SupabaseProvider>
       </body>
     </html>
