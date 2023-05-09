@@ -29,7 +29,7 @@ function ProductCard({
       <h1>{name}</h1>
       <p>Inventory: {inventory}</p>
       <p>Price: {price}</p>
-      <Image src={image} alt={name} height={300} width={300} />
+      <Image src={image} alt={name} height={200} width={200} />
     </div>
   );
 }
