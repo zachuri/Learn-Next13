@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import SupabaseProvider from '../components/supabase-provider';
+import Navbar from '@/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SupabaseProvider>{children}</SupabaseProvider>
+        <SupabaseProvider>
+          <Navbar />
+          {children}
+        </SupabaseProvider>
       </body>
     </html>
   );

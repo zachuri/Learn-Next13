@@ -2,7 +2,7 @@ import React from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Image from 'next/image';
 
-export async function getProducts() {
+async function getProducts() {
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -13,7 +13,7 @@ export async function getProducts() {
   return products;
 }
 
-export function ProductCard({
+function ProductCard({
   name,
   inventory,
   price,
@@ -38,7 +38,7 @@ const Home = async () => {
   const products = await getProducts();
 
   return (
-    <div>
+    <main className="flex flex-col items-center justify-center">
       <h2>Products</h2>{' '}
       <div className="flex flex-col">
         {products?.map(product => {
@@ -53,7 +53,7 @@ const Home = async () => {
           );
         })}
       </div>
-    </div>
+    </main>
   );
 };
 
